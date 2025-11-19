@@ -28,6 +28,13 @@ make && sudo make install
 popd
 #rm -rf OpenClash
 
+# 克隆 kenzok8-packages 仓库
+git clone --depth=1 https://github.com/kenzok8/small-package.git kenzok8-packages
+cp -rf kenzok8-packages/alist package/alist
+cp -rf kenzok8-packages/luci-app-alist package/luci-app-alist
+cp -rf kenzok8-packages/luci-app-ikoolproxy package/luci-app-ikoolproxy
+rm -rf kenzok8-packages
+
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.99.2/g' package/base-files/files/bin/config_generate
 #sed -i 's/192.168.1.1/192.168.99.2/g' package/base-files/luci2/bin/config_generate
