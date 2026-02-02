@@ -75,6 +75,7 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
+        sudo apt-get clean
         sudo -E apt-get -qq update
         sudo apt-get -qq install -y \
             build-essential clang flex bison g++ gawk \
